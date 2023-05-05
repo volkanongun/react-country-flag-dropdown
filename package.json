@@ -1,0 +1,33 @@
+{
+  "name": "country-flags-dropdown",
+  "version": "0.1.0",
+  "private": false,
+  "description": "This component lists the country flags with phone codes with search filtering ability and dropdown selection with keyboard.",
+  "keywords": ["react", "typescript", "country", "country flags", "dropdown", "country flags dropdown"],
+  "author": "Volkan Ongun",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "react-click-away-listener": "^2.2.3",
+    "sass": "^1.62.1"
+  }
+}
