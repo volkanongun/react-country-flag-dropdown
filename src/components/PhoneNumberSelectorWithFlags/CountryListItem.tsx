@@ -1,21 +1,30 @@
-import { Country, CountryListItemProps } from '../types';
-import styles from './PhoneNumberSelectorWithFlags.module.scss';
+import React from 'react'
+import { Country, CountryListItemProps } from './types'
+import styles from './PhoneNumberSelectorWithFlags.module.scss'
 
-const CountryListItem: React.FC<CountryListItemProps> = ({ country, setSelectedPhoneCode, setSelectedFlag, setOpen, selectedCountry, numberInputerRef, listItemRef }) => {
+const CountryListItem: React.FC<CountryListItemProps> = ({
+  country,
+  setSelectedPhoneCode,
+  setSelectedFlag,
+  setOpen,
+  selectedCountry,
+  numberInputerRef,
+  listItemRef,
+}) => {
   const handleDropdownItemClick = (flag: Country) => {
-    const codes = flag.code.split(',');
+    const codes = flag.code.split(',')
 
-    setSelectedPhoneCode(codes[0]);
-    setSelectedFlag(flag);
-    setOpen(false);
-    numberInputerRef.current?.focus();
-  };
+    setSelectedPhoneCode(codes[0])
+    setSelectedFlag(flag)
+    setOpen(false)
+    numberInputerRef.current?.focus()
+  }
 
   const handleKeydown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Escape') {
-      setOpen(false);
+      setOpen(false)
     }
-  };
+  }
 
   return (
     <li className={selectedCountry?.name === country.name ? `${styles.active} currentItem` : ''} ref={listItemRef}>
@@ -25,11 +34,15 @@ const CountryListItem: React.FC<CountryListItemProps> = ({ country, setSelectedP
         </span>
         <span>{country.name}</span>
         <span aria-label={`Country Phone Code ${country.code}`}>
-          {country.code.split(',').length > 1 ? country.code.split(',').map((code: string, i: number) => <cite key={i}>{code}</cite>) : <cite>{country.code}</cite>}
+          {country.code.split(',').length > 1 ? (
+            country.code.split(',').map((code: string, i: number) => <cite key={i}>{code}</cite>)
+          ) : (
+            <cite>{country.code}</cite>
+          )}
         </span>
       </button>
     </li>
-  );
-};
+  )
+}
 
-export default CountryListItem;
+export default CountryListItem

@@ -3,31 +3,56 @@
   "version": "0.1.0",
   "private": false,
   "description": "This component lists the country flags with phone codes with search filtering ability and dropdown selection with keyboard.",
-  "keywords": ["react", "typescript", "country", "country flags", "dropdown", "country flags dropdown"],
-  "author": "Volkan Ongun",
+  "keywords": [
+    "react",
+    "typescript",
+    "country",
+    "country flags",
+    "dropdown",
+    "country flags dropdown"
+  ],
+  "author": "Volkan Ongun (volkanongun)",
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run prettier && npm run lint"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
+    "react-click-away-listener": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.62.1",
     "typescript": "^4.9.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkanongun/react-country-flag-dropdown.git"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "peerDependencies": {
+    "react": ">=16"
   },
-  "devDependencies": {
-    "react-click-away-listener": "^2.2.3",
-    "sass": "^1.62.1"
-  }
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }
