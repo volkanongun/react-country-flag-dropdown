@@ -1,6 +1,6 @@
 TODO:
 
-[ ] find a way to copy images folder to esm and cjs folders for dry-run
+[x] find a way to copy images folder to esm and cjs folders for dry-run
 [ ] publish package
 [ ] install and test
 
