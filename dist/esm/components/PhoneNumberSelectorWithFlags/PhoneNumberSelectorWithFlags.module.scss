@@ -1,0 +1,163 @@
+:root {
+  --accent-color: #e31a1c;
+  --component-color-base-125: #ededed;
+  --component-color-base-150: #ddd;
+  --component-color-base-100: #efefef;
+  --component-color-base-0: #fff;
+  --component-color-base-1000: #000;
+}
+
+.dropdownComponentWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 360px;
+  font-family: 'Noto Sans';
+}
+
+.dropdownWrapper {
+  width: 100%;
+  height: 245px;
+  position: absolute;
+  top: 42px;
+
+  >* {
+    box-shadow: 5px 5px 13px #e5e4e4;
+  }
+
+  >input {
+    width: 100%;
+    padding: 8px 5px;
+    font-family: 'Noto Sans';
+    outline: none;
+    border: 1px solid var(--component-color-base-150);
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--component-color-base-150);
+    }
+  }
+
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border: 1px solid var(--component-color-base-150);
+  border-radius: 4px;
+  height: 200px;
+  overflow-y: scroll;
+  padding: 0.7em;
+  width: 100%;
+  top: 42px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    span:first-child {
+      margin-right: .35em;
+      display: flex;
+      border: 1px solid var(--component-color-base-150);
+      line-height: 1;
+    }
+
+    cite {
+      font-size: 11px;
+      font-style: normal;
+      background-color: var(--component-color-base-125);
+      border-radius: 4px;
+      margin-left: 4px;
+      padding: 2px 4px;
+    }
+
+    button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      align-items: center;
+      padding: 0.55em;
+      font-family: 'Noto Sans', sans-serif;
+
+      &:hover {
+        background-color: var(--component-color-base-100);
+      }
+
+      &:focus {
+        background-color: var(--accent-color) !important;
+        color: var(--component-color-base-0);
+        outline: none;
+
+        cite {
+          color: var(--component-color-base-1000);
+        }
+      }
+    }
+  }
+}
+
+.selectedFlagHolder {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid var(--component-color-base-150);
+  width: 100%;
+  border-radius: 4px;
+
+  >input {
+    padding: 0.3em;
+    border: none;
+    outline: none;
+    line-height: 1.4;
+    font-family: 'Noto Sans';
+    width: 220px;
+  }
+
+  button {
+    background-color: var(--component-color-base-125);
+    border: 1px solid var(--component-color-base-150);
+    line-height: 1;
+    margin-right: 5px;
+    width: 30px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 16px 20px;
+
+  }
+}
+
+.active {
+  button {
+    background-color: var(--accent-color) !important;
+    color: var(--component-color-base-0);
+
+    cite {
+      color: var(--component-color-base-1000);
+    }
+  }
+}
+
+.selectedPhoneCode {
+  font-size: 13px;
+  background-color: var(--component-color-base-125);
+  line-height: 1;
+  padding: 4px 5px;
+}

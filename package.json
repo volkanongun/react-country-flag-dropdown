@@ -19,14 +19,17 @@
     "cjs": "tsc --module commonjs --outDir dist/cjs && npm run copy-files-cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "copy-files-cjs": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg dist/cjs/",
-    "copy-files-esm": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg dist/esm/",
+    "copy-files-cjs": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg src/components/PhoneNumberSelectorWithFlags/**/*.scss dist/cjs/",
+    "copy-files-esm": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg src/components/PhoneNumberSelectorWithFlags/**/*.scss dist/esm/",
     "prepare": "npm run build",
     "prepublishOnly": "npm run prettier && npm run lint"
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "dependencies": {
+    "react-click-away-listener": "^2.2.3"
+  },
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
@@ -40,7 +43,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "react-click-away-listener": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.62.1",
