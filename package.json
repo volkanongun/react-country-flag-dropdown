@@ -1,6 +1,6 @@
 {
   "name": "country-flags-dropdown",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": false,
   "description": "This component lists the country flags with phone codes with search filtering ability and dropdown selection with keyboard.",
   "keywords": [
@@ -14,13 +14,11 @@
   "author": "Volkan Ongun (volkanongun)",
   "license": "MIT",
   "scripts": {
-    "build": "npm run esm && npm run cjs",
-    "esm": "tsc && npm run copy-files-esm",
-    "cjs": "tsc --module commonjs --outDir dist/cjs && npm run copy-files-cjs",
+    "build": "npm run esm",
+    "esm": "tsc --build && npm run copy-files-esm",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "copy-files-cjs": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg src/components/PhoneNumberSelectorWithFlags/**/*.scss dist/cjs/",
-    "copy-files-esm": "copyfiles -u 1 src/components/PhoneNumberSelectorWithFlags/images/**/*.svg src/components/PhoneNumberSelectorWithFlags/**/*.scss dist/esm/",
+    "copy-files-esm": "copyfiles -u 1 src/images/**/*.svg src/PhoneNumberSelectorWithFlags/**/*.css dist/esm/",
     "prepare": "npm run build",
     "prepublishOnly": "npm run prettier && npm run lint"
   },
@@ -28,7 +26,8 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "dependencies": {
-    "react-click-away-listener": "^2.2.3"
+    "react-click-away-listener": "^2.2.3",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -45,7 +44,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.62.1",
     "typescript": "^4.9.5"
   },
   "repository": {

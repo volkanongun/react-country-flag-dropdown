@@ -1,2 +1,2 @@
-import PhoneNumberSelectorWithFlags from './components/PhoneNumberSelectorWithFlags/App';
+import PhoneNumberSelectorWithFlags from './PhoneNumberSelectorWithFlags';
 export { PhoneNumberSelectorWithFlags };
