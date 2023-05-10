@@ -3690,6 +3690,8 @@ const Flag: React.FC<FlagProps> = ({ flag }) => {
           </svg>
         )
     }
+
+    return ''
   }
   return <>{getFlag(flag)}</>
 }

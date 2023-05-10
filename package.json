@@ -1,6 +1,6 @@
 {
   "name": "country-flags-dropdown",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "This component lists the country flags with phone codes with search filtering ability and dropdown selection with keyboard.",
   "keywords": [
@@ -18,7 +18,7 @@
     "esm": "tsc --build && npm run copy-files-esm",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "copy-files-esm": "copyfiles -u 1 src/images/**/*.svg src/PhoneNumberSelectorWithFlags/**/*.css dist/esm/",
+    "copy-files-esm": "copyfiles -u 1 src/PhoneNumberSelectorWithFlags/**/*.css dist/esm/",
     "prepare": "npm run build",
     "prepublishOnly": "npm run prettier && npm run lint"
   },
@@ -26,8 +26,7 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "dependencies": {
-    "react-click-away-listener": "^2.2.3",
-    "sass": "^1.62.1"
+    "react-click-away-listener": "^2.2.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -52,10 +51,5 @@
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ]
+  }
 }

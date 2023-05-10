@@ -135,7 +135,7 @@ const CountryDropdown: React.FC<CountryDropdownProps> = ({
         autoComplete='off'
         ref={searchInputerRef}
       />
-      <div className="dropdown" ref={scrollRef}>
+      <div className='dropdown' ref={scrollRef}>
         <ul>
           {countries.map((country: Country, key: number) => {
             return (
